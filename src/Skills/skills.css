@@ -1,0 +1,108 @@
+* {
+    /* margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box; */
+    /* box-sizing: border-box; */
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.skills-container {
+    width: 100%;
+    max-width: 1001px;
+    margin: 0 auto;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+
+}
+
+.skill p:first-child {
+    text-align: right;
+    width: 100px;
+}
+
+.skill {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progress-line {
+    width: 100%;
+    height: 7px;
+    background-color: #cdcdcd;
+    border-radius: 10px;
+    position: relative;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.progress-line span {
+    /* display: block; */
+    height: 100%;
+    /* border-radius: 10px; */
+    background-color: rgb(192, 55, 255);
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: left;
+    transform-origin: left;
+    -webkit-animation: animate 1s forwards;
+    animation: animate 1s forwards;
+    position: absolute;
+    transition: 1s all;
+    left: 0;
+  border-radius: 10px;
+}
+
+.progress line span.animate {
+    -webkit-animation:  animate 1.5s 0.5s;
+    animation:  animate 1.5s 0.5s;
+}	
+
+.skill-info p {
+    -webkit-animation: showText 0.5s 1s linear forwards;
+  animation: showText 0.5s 1s linear forwards; */
+}
+
+
+@-webkit-keyframes showText {
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes showText {
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes animate {
+    100% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+        background-color: rgb(58, 55, 255);
+
+    }
+}
+
+@keyframes animate {
+    100% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+        background-color: rgb(58, 55, 255);
+    }
+}
+
+
