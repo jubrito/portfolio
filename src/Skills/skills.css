@@ -54,49 +54,25 @@ body {
 }
 
 .animate {
-    -webkit-transform: scaleX(1) !important;
-    transform: scaleX(1) !important;
-    background-color: rgb(58, 55, 255) !important;
+    animation: animate 2s forwards;
+    transition: 1s all;
 }
 
 .progress-line span {
     height: 100%;
-    background-color: rgb(192, 55, 255);
-    -webkit-transform: scaleX(0);
     transform: scaleX(0);
-    -webkit-transform-origin: left;
-    transform-origin: left;
-    -webkit-animation: animate 1s forwards;
-    animation: animate 1s forwards;
     position: absolute;
-    transition: 1s all;
     left: 0;
     border-radius: 10px;
+    transform-origin: left;
 }
-
-/* 
-@-webkit-keyframes showText {
-    100% {
-        opacity: 1;
-    }
-}
-@keyframes showText {
-    100% {
-        opacity: 1;
-    }
-}
-@-webkit-keyframes animate {
-    100% {
-        -webkit-transform: scaleX(1);
-        transform: scaleX(1);
-        background-color: rgb(58, 55, 255);
-    }
-}
-
 @keyframes animate {
+    0% {
+        background-color: rgba(0, 238, 255);
+    }
+
     100% {
-        -webkit-transform: scaleX(1);
         transform: scaleX(1);
         background-color: rgb(58, 55, 255);
     }
-} */
+}
