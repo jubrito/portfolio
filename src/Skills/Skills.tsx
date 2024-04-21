@@ -1,9 +1,31 @@
+import { useEffect, useRef } from "react";
 import "./skills.css";
 
 export const Skills = () => {
+    const skillsSectionRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            const progressBarColoredArray = document.querySelectorAll("span");
+            if (entry.isIntersecting) {
+                for (const item of progressBarColoredArray) {
+                    item.classList.add("animate");
+                }
+            } else {
+                for (const item of progressBarColoredArray) {
+                    item.classList.remove("animate");
+                }
+            }
+        });
+        if (skillsSectionRef.current !== null) {
+            observer.observe(skillsSectionRef.current);
+        }
+    }, []);
+
     return (
         <section className="skills-section" id="skills-section">
-            <div className="skills-container">
+            <div className="skills-container" ref={skillsSectionRef}>
                 <div className="skills">
                     <h1>Skills</h1>
                     <div className="skill">

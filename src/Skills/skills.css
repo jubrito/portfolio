@@ -53,6 +53,12 @@ body {
     margin-right: 15px;
 }
 
+.animate {
+    -webkit-transform: scaleX(1) !important;
+    transform: scaleX(1) !important;
+    background-color: rgb(58, 55, 255) !important;
+}
+
 .progress-line span {
     height: 100%;
     background-color: rgb(192, 55, 255);
@@ -68,11 +74,7 @@ body {
     border-radius: 10px;
 }
 
-.progress line span.animate {
-    -webkit-animation: animate 1.5s 0.5s;
-    animation: animate 1.5s 0.5s;
-}
-
+/* 
 @-webkit-keyframes showText {
     100% {
         opacity: 1;
@@ -97,4 +99,4 @@ body {
         transform: scaleX(1);
         background-color: rgb(58, 55, 255);
     }
-}
+} */
