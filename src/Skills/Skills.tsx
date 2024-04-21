@@ -5,6 +5,7 @@ export const Skills = () => {
         <section className="skills-section" id="skills-section">
             <div className="skills-container">
                 <div className="skills">
+                    <h1>Skills</h1>
                     <div className="skill">
                         <p>React</p>
                         <div className="progress-line" data-percent="80%">

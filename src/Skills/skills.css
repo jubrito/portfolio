@@ -21,7 +21,10 @@ body {
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
+}
 
+.skills-container h1 {
+    text-align: left;
 }
 
 .skill p:first-child {
@@ -51,9 +54,7 @@ body {
 }
 
 .progress-line span {
-    /* display: block; */
     height: 100%;
-    /* border-radius: 10px; */
     background-color: rgb(192, 55, 255);
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
@@ -64,19 +65,13 @@ body {
     position: absolute;
     transition: 1s all;
     left: 0;
-  border-radius: 10px;
+    border-radius: 10px;
 }
 
 .progress line span.animate {
-    -webkit-animation:  animate 1.5s 0.5s;
-    animation:  animate 1.5s 0.5s;
-}	
-
-.skill-info p {
-    -webkit-animation: showText 0.5s 1s linear forwards;
-  animation: showText 0.5s 1s linear forwards; */
+    -webkit-animation: animate 1.5s 0.5s;
+    animation: animate 1.5s 0.5s;
 }
-
 
 @-webkit-keyframes showText {
     100% {
@@ -93,7 +88,6 @@ body {
         -webkit-transform: scaleX(1);
         transform: scaleX(1);
         background-color: rgb(58, 55, 255);
-
     }
 }
 
@@ -104,5 +98,3 @@ body {
         background-color: rgb(58, 55, 255);
     }
 }
-
-
