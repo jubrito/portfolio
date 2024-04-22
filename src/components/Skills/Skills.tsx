@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import "./skills.css";
+import styled from 'styled-components';
 
 export const Skills = () => {
     const skillsSectionRef = useRef(null);
@@ -24,32 +25,79 @@ export const Skills = () => {
     }, []);
 
     return (
-        <section className="skills-section" id="skills-section">
-            <div className="skills-container" ref={skillsSectionRef}>
-                <div className="skills">
-                    <h1>Skills</h1>
-                    <div className="skill">
-                        <p>React</p>
-                        <div className="progress-line" data-percent="80%">
-                            <span
-                                style={{ width: "80%" }}
-                                aria-label="80%"
-                            ></span>
-                        </div>
-                        <p>80%</p>
-                    </div>
-                    <div className="skill">
-                        <p>Typescript</p>
-                        <div className="progress-line" data-percent="60%">
-                            <span
-                                style={{ width: "60%" }}
-                                aria-label="60%"
-                            ></span>
-                        </div>
-                        <p>60%</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <SkillsSection id="skills-section" ref={skillsSectionRef}>
+            <SkillsBlock>
+                <h1>Skills</h1>
+                <Skill>
+                    <p>React</p>
+                    <ProgressLine>
+                        <span
+                            style={{ width: "80%" }}
+                            aria-label="80%"
+                        ></span>
+                    </ProgressLine>
+                    <p>80%</p>
+                </Skill>
+                <Skill>
+                    <p>Typescript</p>
+                    <ProgressLine>
+                        <span
+                            style={{ width: "60%" }}
+                            aria-label="60%"
+                        ></span>
+                    </ProgressLine>
+                    <p>60%</p>
+                </Skill>
+            </SkillsBlock>
+        </SkillsSection>
     );
 };
+
+const SkillsSection = styled.section`
+    h1 {
+        text-align: left;
+    }
+`;
+
+const SkillsBlock = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+`
+
+const Skill = styled.div`
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    align-items: center;
+
+    p:first-child {
+        text-align: right;
+        width: 100px;
+    }
+`;
+
+const ProgressLine = styled.div`
+    width: 100%;
+    height: 7px;
+    background-color: #cdcdcd;
+    border-radius: 10px;
+    position: relative;
+    margin-left: 15px;
+    margin-right: 15px;
+
+    span {
+        height: 100%;
+        transform: scaleX(0);
+        position: absolute;
+        left: 0;
+        border-radius: 10px;
+        transform-origin: left;
+    }
+`;
