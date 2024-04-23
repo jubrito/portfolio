@@ -1,6 +1,7 @@
+import styled from 'styled-components';
 export const About = () => {
     return (
-        <section id="about-section">
+        <AboutSection id="about-section">
             <p>
                 <h1>I'm Juliana Witzke de Brito</h1>
             </p>
@@ -10,6 +11,11 @@ export const About = () => {
                 aim to identify opportunities to impact society and the
                 environment positively
             </p>
-        </section>
+        </AboutSection>
     );
 };
+
+const AboutSection = styled.section`
+    grid-area: about;
+    max-width: 745px;
+`;

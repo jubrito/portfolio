@@ -17,13 +17,20 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
+
+    --main-width: 745px;
 }
 
 .grid-container {
     padding: 4rem;
     display: grid;
-    grid-template-rows: auto 1000px auto;
-    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 0.1fr 0.5fr 1fr 1fr;    grid-template-areas: 
+    "nav nav nav" 
+    "about about about"
+    "header header header"
+    "skills skills skills";
+    justify-items: center;
 }
 
 .header {

@@ -57,14 +57,14 @@ const SkillsSection = styled.section`
     h1 {
         text-align: left;
     }
-`;
+    grid-area: skills;
+    `;
 
 const SkillsBlock = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
+    width: var(--main-width);
 `
 
 const Skill = styled.div`

@@ -2,13 +2,17 @@ import styled from 'styled-components';
 
 export const Nav = () => {
     return (
-        <nav>
+        <Navbar>
             <Anchor href="#about-section">About</Anchor>
             <Anchor href="#skills-section">Skills</Anchor>
             <Anchor href="#projects-section">Projects</Anchor>
-        </nav>
+        </Navbar>
     );
 };
+
+const Navbar = styled.nav`
+    grid-area: nav;
+`
 
 const Anchor = styled.a`
     margin-right: 1em;
