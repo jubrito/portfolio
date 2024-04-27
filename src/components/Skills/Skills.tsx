@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import "./skills.css";
-import styled from 'styled-components';
-import wave from '../../assets/wave.png';
+import styled from "styled-components";
 
 export const Skills = () => {
     const skillsRef = useRef(null);
@@ -28,98 +27,31 @@ export const Skills = () => {
     return (
         <>
             <SkillsSection id="skills-section">
-            <Ocean className="ocean">
-                <Wave className="wave1"/>
-                <Wave className="wave2"/>
-                <Wave className="wave3"/>
-                <Wave className="wave4"/>
-            </Ocean>
-            <SkillsBlock ref={skillsRef}>
-                <h1>Skills</h1>
-                <Skill>
-                    <p>React</p>
-                    <ProgressLine>
-                        <span
-                            style={{ width: "80%" }}
-                            aria-label="80%"
-                        ></span>
-                    </ProgressLine>
-                    <p>80%</p>
-                </Skill>
-                <Skill>
-                    <p>Typescript</p>
-                    <ProgressLine>
-                        <span
-                            style={{ width: "60%" }}
-                            aria-label="60%"
-                        ></span>
-                    </ProgressLine>
-                    <p>60%</p>
-                </Skill>
-            </SkillsBlock>
-        </SkillsSection>
+                <SkillsBlock ref={skillsRef}>
+                    <h1>Skills</h1>
+                    <Skill>
+                        <p>React</p>
+                        <ProgressLine>
+                            <span
+                                style={{ width: "80%" }}
+                                aria-label="80%"></span>
+                        </ProgressLine>
+                        <p>80%</p>
+                    </Skill>
+                    <Skill>
+                        <p>Typescript</p>
+                        <ProgressLine>
+                            <span
+                                style={{ width: "60%" }}
+                                aria-label="60%"></span>
+                        </ProgressLine>
+                        <p>60%</p>
+                    </Skill>
+                </SkillsBlock>
+            </SkillsSection>
         </>
     );
 };
-
-const Ocean = styled.div`
-    position: relative;
-    width: 100%;
-`;
-
-const Wave = styled.div`
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url(${wave});
-    background-size: 1000px 100px;
-    &.wave1 {
-        animation: wave1 15s linear infinite;
-        z-index: 1000;
-        opacity: 1;
-        animation-delay: 0s;
-        bottom: -15px;
-    }
-    &.wave2 {
-        animation: wave 15s linear infinite;
-        z-index: 999;
-        animation-delay: -5s;
-        bottom: 0px;
-        opacity: 0.7;
-    }
-    &.wave3 {
-        animation: wave2 8s linear infinite;
-        z-index: 998;
-        animation-delay: -2s;
-        bottom: 10px;
-        opacity: 0.5;
-    }
-    &.wave4 {
-        animation: wave2 10s linear infinite;
-        z-index: 997;
-        animation-delay: -5s;
-        bottom: 10px;
-        opacity: 0.2;
-    }
-    @keyframes wave1 {
-        0% {
-            background-position-x: 0;
-        }
-        100% {
-            background-position-x: 1000px;
-        }
-    }
-    @keyframes wave2 {
-        0% {
-            background-position-x: 0;
-        }
-        100% {
-            background-position-x: 1000px;
-        }
-    } 
-`;
 
 const SkillsSection = styled.section`
     h1 {
@@ -132,14 +64,14 @@ const SkillsSection = styled.section`
     align-items: center;
     background: white;
     color: black;
-    `;
+`;
 
 const SkillsBlock = styled.div`
     display: flex;
     flex-direction: column;
     max-width: var(--main-width);
     width: 100%;
-`
+`;
 
 const Skill = styled.div`
     width: 100%;
