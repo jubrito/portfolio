@@ -29,24 +29,49 @@ export const Skills = () => {
             <SkillsSection id="skills-section">
                 <SkillsBlock ref={skillsRef}>
                     <h1>Skills</h1>
-                    <Skill>
-                        <p>React</p>
+                    <Skill aria-label="React level is 80%">
+                        <p aria-hidden="true">React</p>
                         <ProgressLine>
-                            <span
-                                style={{ width: "80%" }}
-                                aria-label="80%"></span>
+                            <span style={{ width: "80%" }}></span>
                         </ProgressLine>
-                        <p>80%</p>
                     </Skill>
-                    <Skill>
-                        <p>Typescript</p>
+                    <Skill aria-label="Typescript level is 80%">
+                        <p aria-hidden="true">Typescript</p>
                         <ProgressLine>
-                            <span
-                                style={{ width: "60%" }}
-                                aria-label="60%"></span>
+                            <span style={{ width: "60%" }}></span>
                         </ProgressLine>
-                        <p>60%</p>
                     </Skill>
+                    <Skill aria-label="HTML level is 85%">
+                        <p>HTML</p>
+                        <ProgressLine>
+                            <span style={{ width: "85%" }}></span>
+                        </ProgressLine>
+                    </Skill>
+                    <Skill aria-label="CSS level is 90%">
+                        <p>CSS</p>
+                        <ProgressLine>
+                            <span style={{ width: "90%" }}></span>
+                        </ProgressLine>
+                    </Skill>
+                    <Skill aria-label="Accessibility level is 70%">
+                        <p>Accessibility</p>
+                        <ProgressLine>
+                            <span style={{ width: "70%" }}></span>
+                        </ProgressLine>
+                    </Skill>
+                    <Skill aria-label="Java level is 55%">
+                        <p>Java</p>
+                        <ProgressLine>
+                            <span style={{ width: "55%" }}></span>
+                        </ProgressLine>
+                    </Skill>
+                    <Skill aria-label="Node level is 30%">
+                        <p>Node</p>
+                        <ProgressLine>
+                            <span style={{ width: "30%" }}></span>
+                        </ProgressLine>
+                    </Skill>
+                    <HiddenLink href="#nav">Go back to nav bar</HiddenLink>
                 </SkillsBlock>
             </SkillsSection>
         </>
@@ -64,6 +89,13 @@ const SkillsSection = styled.section`
     align-items: center;
     background: white;
     color: black;
+    height: fit-content;
+    padding-bottom: 25px;
+`;
+
+const HiddenLink = styled.a`
+    opacity: 0;
+    height: 1;
 `;
 
 const SkillsBlock = styled.div`
@@ -82,6 +114,7 @@ const Skill = styled.div`
     -ms-flex-pack: justify;
     justify-content: space-between;
     align-items: center;
+    height: 30px;
 
     p:first-child {
         text-align: right;
