@@ -76,11 +76,32 @@ const Wave = styled.div`
     background: url(${wave});
     background-size: 1000px 100px;
     &.wave1 {
-        animation: wave1 30s linear infinite;
+        animation: wave1 15s linear infinite;
         z-index: 1000;
         opacity: 1;
         animation-delay: 0s;
-        bottom: 0;
+        bottom: -15px;
+    }
+    &.wave2 {
+        animation: wave 15s linear infinite;
+        z-index: 999;
+        animation-delay: -5s;
+        bottom: 0px;
+        opacity: 0.7;
+    }
+    &.wave3 {
+        animation: wave2 8s linear infinite;
+        z-index: 998;
+        animation-delay: -2s;
+        bottom: 10px;
+        opacity: 0.5;
+    }
+    &.wave4 {
+        animation: wave2 10s linear infinite;
+        z-index: 997;
+        animation-delay: -5s;
+        bottom: 10px;
+        opacity: 0.2;
     }
     @keyframes wave1 {
         0% {
@@ -90,36 +111,14 @@ const Wave = styled.div`
             background-position-x: 1000px;
         }
     }
-    &.wave2 {
-        animation: wave2 15s linear infinite;
-        z-index: 999;
-        animation-delay: -5s;
-        bottom: 10px;
-        opacity: 0.7;
-    }
     @keyframes wave2 {
         0% {
             background-position-x: 0;
         }
         100% {
-            background-position-x: -1000px;
+            background-position-x: 1000px;
         }
     } 
-    &.wave3 {
-        animation: wave 15s linear infinite;
-        z-index: 998;
-        animation-delay: -2s;
-        bottom: 15px;
-        opacity: 0.5;
-    }
-   
-    &.wave4 {
-        animation: wave2 15s linear infinite;
-        z-index: 997;
-        animation-delay: -5s;
-        bottom: 20px;
-        opacity: 0.2;
-    }
 `;
 
 const SkillsSection = styled.section`
@@ -138,7 +137,8 @@ const SkillsSection = styled.section`
 const SkillsBlock = styled.div`
     display: flex;
     flex-direction: column;
-    width: var(--main-width);
+    max-width: var(--main-width);
+    width: 100%;
 `
 
 const Skill = styled.div`
