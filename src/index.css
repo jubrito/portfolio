@@ -24,11 +24,13 @@
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: 0.1fr 0.5fr 1fr 1fr;    grid-template-areas: 
-    "nav nav nav" 
-    "about about about"
-    "header header header"
-    "skills skills skills";
+    grid-template-rows: 0.1fr 0.5fr 1fr 1fr;
+    grid-template-areas:
+        "nav nav nav"
+        "about about about"
+        "header header header"
+        "skills skills skills"
+        "proj proj proj";
     justify-items: center;
 }
 
