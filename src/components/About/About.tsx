@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 export const About = () => {
     return (
         <AboutSection id="about-section">
@@ -17,5 +17,5 @@ export const About = () => {
 
 const AboutSection = styled.section`
     grid-area: about;
-    maxWidth: var(--main-width);
+    max-width: var(--main-width);
 `;
