@@ -17,5 +17,5 @@ export const About = () => {
 
 const AboutSection = styled.section`
     grid-area: about;
-    max-width: 745px;
+    width: var(--main-width);
 `;
