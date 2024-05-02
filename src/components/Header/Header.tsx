@@ -35,9 +35,9 @@ const Wave = styled.div`
     background-size: 1000px 100px;
     &.wave1 {
         animation: wave1 15s linear infinite;
+        animation-delay: 0s;
         z-index: 1000;
         opacity: 1;
-        animation-delay: 0s;
         bottom: -15px;
     }
     &.wave2 {
