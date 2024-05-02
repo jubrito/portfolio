@@ -1,4 +1,6 @@
 import styled from "styled-components";
+// import githublogo from "../../assets/github-logo.png";
+import githublogo from "../../assets/image.png";
 
 export const Projects = () => {
     return (
@@ -7,21 +9,42 @@ export const Projects = () => {
             <ProjectsBlock>
                 <ProjectBorder>
                     <Project>
-                        <h2>Suas ações são sustentáveis?</h2>
+                        <ProjHeader>
+                            <h2>
+                                <a
+                                    href="https://sustentabilidade-quiz-jubrito.vercel.app/"
+                                    style={{ color: "white" }}>
+                                    Quiz de sustentabilidade
+                                </a>
+                            </h2>
+                            <a
+                                href="https://github.com/jubrito/sustentabilidade-quiz"
+                                aria-label="Visit quiz's repository on github">
+                                <GithubLogo src={githublogo} alt="" />
+                            </a>
+                        </ProjHeader>
+                        <hr />
                         <p>
-                            Teste em React utilizando SPA, o framework Next.JS e
-                            Styled Components. (Adaptação da Imersão React feita
-                            pela Alura)
+                            Teste em React utilizando SPA, Next.JS e Styled
+                            Components. (Adaptação da Imersão React feita pela
+                            Alura)
                         </p>
                     </Project>
                 </ProjectBorder>
                 <ProjectBorder>
                     <Project>
-                        <h2>Suas ações são sustentáveis?</h2>
+                        <ProjHeader>
+                            <h2>Ecoleta</h2>
+                            <a
+                                href="https://github.com/jubrito/ecoleta"
+                                aria-label="Visit ecoleta's repository on github">
+                                <GithubLogo src={githublogo} alt="" />
+                            </a>
+                        </ProjHeader>
+                        <hr />
                         <p>
-                            Teste em React utilizando SPA, o framework Next.JS e
-                            Styled Components. (Adaptação da Imersão React feita
-                            pela Alura)
+                            Aplicação construida com React, React Native e Node
+                            - Next Level Week @Rocketseat
                         </p>
                     </Project>
                 </ProjectBorder>
@@ -30,15 +53,28 @@ export const Projects = () => {
     );
 };
 
+const GithubLogo = styled.img`
+    width: 25px;
+`;
+
+const ProjHeader = styled.div`
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+`;
+
 const ProjectsSection = styled.section`
     width: 100%;
     grid-area: proj;
     max-width: var(--main-width);
     h1 {
         text-align: left;
-        width: 100%;
-        display: block;
     }
+    h2 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    --border-radius: 14px;
 `;
 
 const ProjectsBlock = styled.div`
@@ -51,23 +87,28 @@ const ProjectsBlock = styled.div`
 const ProjectBorder = styled.div`
     background: linear-gradient(
         60deg,
+        hsl(0, 0%, 0%),
         hsl(224, 100%, 50%),
         hsl(272, 100%, 50%),
-        hsl(179, 85%, 66%)
+        hsl(179, 85%, 66%),
+        hsl(0, 0%, 100%)
     );
     background-size: 300% 300%;
     background-position: 0 50%;
-    border-radius: 4px;
-    animation: moveGradient 4s alternate infinite;
+    border-radius: var(--border-radius);
+    animation: moveGradient 6s alternate infinite;
     padding: 2px;
+    width: 100%;
+    margin-bottom: 30px;
     &:nth-child(odd) {
-        margin-right: 40px;
+        margin-right: 30px;
     }
 `;
 
 const Project = styled.div`
-    background: black;
-    border-radius: 4px;
+    background: #131313;
+    border-radius: var(--border-radius);
+    text-align: left;
     color: white;
     position: relative;
     overflow: hidden;
@@ -87,42 +128,3 @@ const Project = styled.div`
         }
     }
 `;
-// const Project = styled.div`
-//     background: white;
-//     border-radius: 3%;
-//     color: black;
-//     width: 49%;
-//     position: absolute;
-//     animation: updown 1s linear forwards;
-//     animation-delay: 0s;
-//     transform: translateY(-200px);
-//     &:nth-child(odd) {
-//         margin-right: 30px;
-//         left: 0;
-//     }
-//     &:nth-child(even) {
-//         right: 0;
-//     }
-//     h2 {
-//         margin-top: 0;
-//         background-color: 10px;
-//         background: #000097;
-//         border-radius: 2% 2% 2% 2%;
-//         color: white;
-//     }
-//     p {
-//         margin-bottom: 0;
-//     }
-
-//     @keyframes updown {
-//         0% {
-//             transform: translateY(-100px);
-//         }
-//         25% {
-//             transform: translateY(-50px);
-//         }
-//         100% {
-//             transform: translateY(60px);
-//         }
-//     }
-// `;
