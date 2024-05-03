@@ -4,7 +4,7 @@ import githublogo from "../../assets/image.png";
 
 export const Projects = () => {
     return (
-        <ProjectsSection>
+        <ProjectsSection id="projects-section">
             <h1>Projects</h1>
             <ProjectsBlock>
                 <ProjectBorder>
