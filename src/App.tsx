@@ -1,4 +1,3 @@
-import "./App.css";
 import { Skills } from "./components/Skills/Skills";
 import { About } from "./components/About/About";
 import { Nav } from "./components/Nav/Nav";

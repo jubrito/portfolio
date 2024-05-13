@@ -1,6 +1,22 @@
+import { useEffect } from "react";
 import styled from "styled-components";
 
 export const Nav = () => {
+    useEffect(() => {
+        const nav = document.getElementById("nav");
+        const anchors = nav?.querySelectorAll("a");
+        if (anchors) {
+            for (let i = 0; i < anchors?.length; i++) {
+                // console.log("anchors", anchors[i]);
+                anchors[i]?.addEventListener("click", () => {
+                    const current = nav?.getElementsByClassName("active")[0];
+                    current?.classList.remove("active");
+                    anchors[i].classList.add("active");
+                });
+            }
+        }
+    }, []);
+
     return (
         <Navbar id="nav">
             <NavBlock>
@@ -24,72 +40,60 @@ export const Nav = () => {
 const Navbar = styled.nav`
     grid-area: nav;
     width: 100%;
-    margin: 0 auto;
     z-index: 10000;
     display: flex;
+    position: fixed;
     justify-content: center;
     --anchorwidth: calc(100% / 3);
+    background: #131313;
+    opacity: 0.85;
+    padding-bottom: 10px;
 `;
 const NavBlock = styled.div`
     position: relative;
-    margin-top: 20px;
     height: 20px;
     padding: 10px 0;
-    background-color: #ffffff1c;
     border-radius: 20px;
-
-    .bg {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: var(--anchorwidth);
-        left: 5px;
-        height: 30px;
-        top: 5px;
-        background-color: #6030ff;
-        border-radius: 20px;
-        transition: 0.2s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
 `;
 
 const AnchorBlock = styled.div`
     width: var(--anchorwidth);
     height: 30px;
     display: inline-block;
-    border-radius: 20px;
     position: relative;
 
-    &:hover:nth-child(1) ~ .bg {
-        left: 5px;
+    .active {
+        bordom-bottom: 1px solid white;
+        transition: transform 2s;
+        &::after {
+            position: absolute;
+            content: "";
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #00ddff;
+            transform: scaleX(0);
+            transition: transform 0.5s;
+            animation: activeanchor 2s normal forwards;
+        }
     }
 
-    &:hover:nth-child(2) ~ .bg {
-        left: var(--anchorwidth);
+    &:hover::after {
     }
 
-    &:hover:nth-child(3) ~ .bg {
-        left: calc(var(--anchorwidth) * 2 - 5px);
+    @keyframes activeanchor {
+        to {
+            transform: scaleX(1);
+            transform-origin: center;
+        }
     }
-
-    /* &::before {
-        content: "";
-        width: 80%;
-        position: absolute;
-        left: 10px;
-        top: 0px;
-        height: 80%;
-        border-radius: 20px;
-        transition: 0.5s;
-    }
-    &:nth-child(1):hover::before {
-        background: pink;
-    } */
 `;
 
 const Anchor = styled.a`
     color: inherit;
     text-decoration: none;
-    padding: 10px 40px;
+    padding: 10px 40px 5px;
     color: white;
     font-weight: bold;
     position: relative;
