@@ -10,7 +10,6 @@
 
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
-    background-color: #131313;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -18,13 +17,19 @@
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
 
-    --main-width: 745px;
+    --main-width: 1000px;
+    /* --main-bg: #1e2638; */
+    --main-bg: #131313;
+    --primary-color: #1e2638;
+    --primary-color-light: #4d6cb0;
+
+    background-color: var(--main-bg);
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: 0.1fr 0.5fr 1fr 1fr;
+    grid-template-rows: 0.1fr 0.3fr 0fr 0.6fr;
     grid-template-areas:
         "nav nav nav"
         "about about about"
@@ -54,4 +59,9 @@ body {
 h1 {
     font-size: 2.5em;
     line-height: 1;
+}
+
+p,
+a {
+    font-size: 1.5rem;
 }

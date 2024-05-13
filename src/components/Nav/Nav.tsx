@@ -44,23 +44,23 @@ const Navbar = styled.nav`
     display: flex;
     position: fixed;
     justify-content: center;
-    --anchorwidth: calc(100% / 3);
-    background: #131313;
-    opacity: 0.85;
-    padding-bottom: 10px;
+    --anchorwidth: 130px;
+    background: var(--main-bg);
+    opacity: 0.9;
+    padding-top: 20px;
 `;
 const NavBlock = styled.div`
     position: relative;
-    height: 20px;
+    height: 30px;
     padding: 10px 0;
-    border-radius: 20px;
+    width: var(--main-width);
 `;
 
 const AnchorBlock = styled.div`
     width: var(--anchorwidth);
-    height: 30px;
     display: inline-block;
     position: relative;
+    float: left;
 
     .active {
         bordom-bottom: 1px solid white;
@@ -72,20 +72,18 @@ const AnchorBlock = styled.div`
             left: 0;
             width: 100%;
             height: 3px;
-            background: #00ddff;
+            background: var(--primary-color);
             transform: scaleX(0);
             transition: transform 0.5s;
             animation: activeanchor 2s normal forwards;
+            transform-origin: left;
         }
-    }
-
-    &:hover::after {
     }
 
     @keyframes activeanchor {
         to {
             transform: scaleX(1);
-            transform-origin: center;
+            background: white;
         }
     }
 `;
@@ -93,7 +91,7 @@ const AnchorBlock = styled.div`
 const Anchor = styled.a`
     color: inherit;
     text-decoration: none;
-    padding: 10px 40px 5px;
+    padding: 10px 30px 5px;
     color: white;
     font-weight: bold;
     position: relative;

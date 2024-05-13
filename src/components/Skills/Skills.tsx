@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import "./skills.css";
 import styled from "styled-components";
 
 export const Skills = () => {
@@ -8,7 +7,8 @@ export const Skills = () => {
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             const entry = entries[0];
-            const progressBarColoredArray = document.querySelectorAll("span");
+            const progressBarColoredArray =
+                document.getElementsByClassName("line");
             if (entry.isIntersecting) {
                 for (const item of progressBarColoredArray) {
                     item.classList.add("animate");
@@ -26,49 +26,63 @@ export const Skills = () => {
 
     return (
         <>
-            <SkillsSection id="skills-section">
+            <SkillsSection>
                 <SkillsBlock ref={skillsRef}>
                     <h1>Skills</h1>
                     <Skill aria-label="React level is 80%">
                         <p aria-hidden="true">React</p>
                         <ProgressLine>
-                            <span style={{ width: "80%" }}></span>
+                            <span
+                                className="line"
+                                style={{ width: "80%" }}></span>
                         </ProgressLine>
                     </Skill>
                     <Skill aria-label="Typescript level is 80%">
                         <p aria-hidden="true">Typescript</p>
                         <ProgressLine>
-                            <span style={{ width: "60%" }}></span>
+                            <span
+                                className="line"
+                                style={{ width: "60%" }}></span>
                         </ProgressLine>
                     </Skill>
                     <Skill aria-label="HTML level is 85%">
                         <p>HTML</p>
                         <ProgressLine>
-                            <span style={{ width: "85%" }}></span>
+                            <span
+                                className="line"
+                                style={{ width: "85%" }}></span>
                         </ProgressLine>
                     </Skill>
                     <Skill aria-label="CSS level is 90%">
                         <p>CSS</p>
                         <ProgressLine>
-                            <span style={{ width: "90%" }}></span>
+                            <span
+                                className="line"
+                                style={{ width: "90%" }}></span>
                         </ProgressLine>
                     </Skill>
                     <Skill aria-label="Accessibility level is 70%">
                         <p>Accessibility</p>
                         <ProgressLine>
-                            <span style={{ width: "70%" }}></span>
+                            <span
+                                className="line"
+                                style={{ width: "70%" }}></span>
                         </ProgressLine>
                     </Skill>
                     <Skill aria-label="Java level is 55%">
                         <p>Java</p>
                         <ProgressLine>
-                            <span style={{ width: "55%" }}></span>
+                            <span
+                                className="line"
+                                style={{ width: "55%" }}></span>
                         </ProgressLine>
                     </Skill>
                     <Skill aria-label="Node level is 30%">
                         <p>Node</p>
                         <ProgressLine>
-                            <span style={{ width: "30%" }}></span>
+                            <span
+                                className="line"
+                                style={{ width: "30%" }}></span>
                         </ProgressLine>
                     </Skill>
                     <HiddenLink href="#nav">Go back to nav bar</HiddenLink>
@@ -87,15 +101,15 @@ const SkillsSection = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: white;
-    color: black;
+    background: var(--primary-color);
+    color: white;
     height: fit-content;
     padding-bottom: 25px;
 `;
 
 const HiddenLink = styled.a`
     opacity: 0;
-    height: 1;
+    height: 0;
 `;
 
 const SkillsBlock = styled.div`
@@ -103,6 +117,22 @@ const SkillsBlock = styled.div`
     flex-direction: column;
     max-width: var(--main-width);
     width: 100%;
+
+    .animate {
+        animation: animate 2s forwards;
+        transition: 1s all;
+    }
+
+    @keyframes animate {
+        0% {
+            background-color: var(--primary-color-light);
+        }
+
+        100% {
+            transform: scaleX(1);
+            background-color: white;
+        }
+    }
 `;
 
 const Skill = styled.div`
@@ -114,24 +144,23 @@ const Skill = styled.div`
     -ms-flex-pack: justify;
     justify-content: space-between;
     align-items: center;
-    height: 30px;
+    height: 40px;
 
     p:first-child {
         text-align: right;
-        width: 100px;
+        width: 160px;
     }
 `;
 
 const ProgressLine = styled.div`
     width: 100%;
     height: 7px;
-    background-color: #cdcdcd;
+    background-color: #5a5a5a;
     border-radius: 10px;
     position: relative;
     margin-left: 15px;
-    margin-right: 15px;
 
-    span {
+    .line {
         height: 100%;
         transform: scaleX(0);
         position: absolute;
