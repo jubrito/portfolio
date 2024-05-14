@@ -1,32 +1,36 @@
 import { ReactNode } from "react";
 import styled from "styled-components";
-
+import chevronUp from "../../assets/chevron-up-solid.svg";
 export const Professional = () => {
     return (
         <ProfessionalSection>
-            <h1>Professional Experience</h1>
-            <ProfessionalItem
-                id={0}
-                title="Thoughtworks"
-                duration="2021 – present">
-                <p>
-                    <strong>Trainee & Software Developer consultant. </strong>
-                    Graduate at Thoughtworks University (TWU-73), a trainee
-                    program that brought together technologists from around the
-                    world promoting cultural exchange and focusing on software
-                    development, agile culture, TDD, pair programming, Clean
-                    Code, CI/CD and Social Transformation.
-                </p>
-                <p>
-                    Relevant projects: Client engagement simulations through the
-                    development of an e-commerce web application; Vertical
-                    implementations of user stories; Unit and Functional tests;
-                    Continuoues Integration ppeline resolutions; Facilitation of
-                    Agile ceremonies, Feature Toggls to allow Trunk Based
-                    Development; Cultivation of a strong team clulture through
-                    collaboration and candid feedback.
-                </p>
-                <div className="technologies">
+            <div className="container">
+                <h1>Professional Experience</h1>
+                <ProfessionalItem
+                    id={0}
+                    title="Thoughtworks"
+                    duration="2021 – present">
+                    <p>
+                        <strong>
+                            Trainee & Software Developer consultant.{" "}
+                        </strong>
+                        Graduate at Thoughtworks University (TWU-73), a trainee
+                        program that brought together technologists from around
+                        the world promoting cultural exchange and focusing on
+                        software development, agile culture, TDD, pair
+                        programming, Clean Code, CI/CD and Social
+                        Transformation.
+                    </p>
+                    <p>
+                        Relevant projects: Client engagement simulations through
+                        the development of an e-commerce web application;
+                        Vertical implementations of user stories; Unit and
+                        Functional tests; Continuoues Integration ppeline
+                        resolutions; Facilitation of Agile ceremonies, Feature
+                        Toggls to allow Trunk Based Development; Cultivation of
+                        a strong team clulture through collaboration and candid
+                        feedback.
+                    </p>
                     <span>React</span>
                     <span>Java</span>
                     <span>Spring Boot</span>
@@ -34,30 +38,34 @@ export const Professional = () => {
                     <span>Jest</span>
                     <span>jUnit</span>
                     <span>Taiko</span>
-                </div>
-            </ProfessionalItem>
-            <ProfessionalItem id={2} title="GreenPlat" duration="2020 – 2021">
-                <p>
-                    <strong>Web Developer. </strong>
-                    Created applications for waste management enabing blockchain
-                    technology to accelerate sustainable production.
-                </p>
-                <p>
-                    Relevant projects: Development of software integration with
-                    public agencies in compliance with the decree published by
-                    the Brazilian Ministry of the Environment; Organization of
-                    project structures, creation of reusable components and
-                    themes, code and style standardization focusing on
-                    scalability and maintainability.
-                </p>
-                <span>Javascript</span>
-                <span>jQuery</span>
-                <span>Bootstrap</span>
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>Ajax</span>
-                <span>Docker</span>
-            </ProfessionalItem>
+                </ProfessionalItem>
+                <ProfessionalItem
+                    id={2}
+                    title="GreenPlat"
+                    duration="2020 – 2021">
+                    <p>
+                        <strong>Web Developer. </strong>
+                        Created applications for waste management enabing
+                        blockchain technology to accelerate sustainable
+                        production.
+                    </p>
+                    <p>
+                        Relevant projects: Development of software integration
+                        with public agencies in compliance with the decree
+                        published by the Brazilian Ministry of the Environment;
+                        Organization of project structures, creation of reusable
+                        components and themes, code and style standardization
+                        focusing on scalability and maintainability.
+                    </p>
+                    <span>Javascript</span>
+                    <span>jQuery</span>
+                    <span>Bootstrap</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>Ajax</span>
+                    <span>Docker</span>
+                </ProfessionalItem>
+            </div>
         </ProfessionalSection>
     );
 };
@@ -94,6 +102,7 @@ const ProfessionalItem = ({
                 aria-label={title}>
                 <h2 aria-hidden="true">{title}</h2>
                 <h3>({duration})</h3>
+                <img src={chevronUp} />
             </button>
             <div
                 aria-labelledby={`header${id}`}
@@ -112,9 +121,19 @@ const Experience = styled.div`
 
 const ProfessionalSection = styled.section`
     grid-area: professional;
-    max-width: var(--main-width);
     width: 100%;
     text-align: left;
+    background: var(--primary-color-light);
+    display: flex;
+    justify-content: center;
+    .container {
+        max-width: var(--main-width);
+        width: 100%;
+    }
+
+    h1 {
+        color: black;
+    }
 
     h2 {
         text-transform: uppercase;
@@ -130,11 +149,12 @@ const ProfessionalSection = styled.section`
     }
 
     span {
-        background: var(--primary-color);
+        background: var(--main-bg);
         border-radius: 15px;
-        padding: 10px;
+        padding: 7px 15px;
         color: white;
         margin-right: 10px;
+        display: inline-block;
     }
 
     button {
@@ -142,7 +162,7 @@ const ProfessionalSection = styled.section`
         align-items: center;
         margin: 0;
         padding: 0;
-        background: var(--primary-color);
+        background: var(--main-bg);
         border: 0;
         padding: 0 20px;
         border-radius: 10px;
@@ -150,6 +170,18 @@ const ProfessionalSection = styled.section`
         &.expanded {
             border-radius: 10px 10px 0 0;
             width: 100%;
+            transition: 1s;
+
+            img {
+                transform: rotate(180deg);
+            }
+        }
+
+        img {
+            width: 20px;
+            margin-left: 20px;
+            transform: rotate(90deg);
+            transition: 1s;
         }
     }
 
