@@ -46,7 +46,7 @@ export const Skills = () => {
                         </ProgressLine>
                     </Skill>
                     <Skill aria-label="HTML level is 85%">
-                        <p>HTML</p>
+                        <p aria-hidden="true">HTML</p>
                         <ProgressLine>
                             <span
                                 className="line"
@@ -54,7 +54,7 @@ export const Skills = () => {
                         </ProgressLine>
                     </Skill>
                     <Skill aria-label="CSS level is 90%">
-                        <p>CSS</p>
+                        <p aria-hidden="true">CSS</p>
                         <ProgressLine>
                             <span
                                 className="line"
@@ -62,7 +62,7 @@ export const Skills = () => {
                         </ProgressLine>
                     </Skill>
                     <Skill aria-label="Accessibility level is 70%">
-                        <p>Accessibility</p>
+                        <p aria-hidden="true">Accessibility</p>
                         <ProgressLine>
                             <span
                                 className="line"
@@ -70,7 +70,7 @@ export const Skills = () => {
                         </ProgressLine>
                     </Skill>
                     <Skill aria-label="Java level is 55%">
-                        <p>Java</p>
+                        <p aria-hidden="true">Java</p>
                         <ProgressLine>
                             <span
                                 className="line"
@@ -78,7 +78,7 @@ export const Skills = () => {
                         </ProgressLine>
                     </Skill>
                     <Skill aria-label="Node level is 30%">
-                        <p>Node</p>
+                        <p aria-hidden="true">Node</p>
                         <ProgressLine>
                             <span
                                 className="line"
