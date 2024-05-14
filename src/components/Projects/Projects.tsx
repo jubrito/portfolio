@@ -7,56 +7,68 @@ export const Projects = () => {
         <ProjectsSection id="projects-section">
             <h1>Projects</h1>
             <ProjectsBlock>
-                <ProjectBorder>
-                    <Project>
-                        <Technologies>
-                            <span>React</span>
-                            <span>NextJS</span>
-                            <span>Styled Components</span>
-                        </Technologies>
-                        <ProjHeader>
-                            <h2 aria-label="Quiz de sustentabilidade">
-                                <a
-                                    href="https://sustentabilidade-quiz-jubrito.vercel.app/"
-                                    aria-hidden={true}>
-                                    Sustainability Quiz
-                                </a>
-                            </h2>
-                            <a
-                                href="https://github.com/jubrito/sustentabilidade-quiz"
-                                aria-label="Visit quiz's repository on github">
-                                <GithubLogo src={githublogo} alt="" />
-                            </a>
-                        </ProjHeader>
-                        <p>
-                            Test your accessibility knowledge! (Adapted from
-                            Alura's React Imersion)
-                        </p>
-                    </Project>
-                </ProjectBorder>
-                <ProjectBorder>
-                    <Project>
-                        <Technologies>
-                            <span>React</span>
-                            <span>React Native</span>
-                            <span>NodeJS</span>
-                        </Technologies>
-                        <ProjHeader aria-label="Ecoleta">
-                            <h2 aria-hidden={true}>Ecoleta</h2>
-                            <a
-                                href="https://github.com/jubrito/ecoleta"
-                                aria-label="Visit ecoleta's repository on github">
-                                <GithubLogo src={githublogo} alt="" />
-                            </a>
-                        </ProjHeader>
-                        <p>
-                            Application built during Next Level Week from
-                            @Rocketseat
-                        </p>
-                    </Project>
-                </ProjectBorder>
+                <Project
+                    technologies={["React", "NextJS", "Styled Components"]}
+                    title="Sustainability Quiz"
+                    description="Test your accessibility knowledge! (Adapted from
+                            Alura's React Imersion)"
+                    repository="https://github.com/jubrito/sustentabilidade-quiz"
+                    link="https://sustentabilidade-quiz-jubrito.vercel.app/"
+                />
+                <Project
+                    technologies={["React", "React Native", "NodeJS"]}
+                    title="Ecoleta"
+                    description="Application built during Next Level Week from @Rocketseat"
+                    repository="https://github.com/jubrito/ecoleta"
+                />
             </ProjectsBlock>
         </ProjectsSection>
+    );
+};
+
+type ProjectProps = {
+    technologies: string[];
+    title: string;
+    repository: string;
+    description: string;
+    link?: string;
+};
+
+const Project = ({
+    technologies,
+    title,
+    repository,
+    description,
+    link,
+}: ProjectProps) => {
+    return (
+        <ProjectBorder>
+            <Proj>
+                <Technologies aria-label="Technologies used in this project">
+                    {technologies.map((tech: string) => (
+                        <span>{tech}</span>
+                    ))}
+                </Technologies>
+                <ProjHeader aria-label={title}>
+                    <h2 aria-hidden={true}>
+                        {link && (
+                            <a
+                                href="https://sustentabilidade-quiz-jubrito.vercel.app/"
+                                aria-hidden={true}>
+                                Sustainability Quiz
+                            </a>
+                        )}
+                        {!link && title}
+                    </h2>
+                    <a
+                        href={repository}
+                        aria-label="Visit this project's repository on github">
+                        <GithubLogo src={githublogo} alt="" />
+                    </a>
+                </ProjHeader>
+                <p>{description}</p>
+            </Proj>
+        </ProjectBorder>
     );
 };
 
@@ -119,7 +131,7 @@ const ProjectBorder = styled.div`
     }
 `;
 
-const Project = styled.div`
+const Proj = styled.div`
     background: #131313;
     border-radius: var(--border-radius);
     text-align: left;
