@@ -25,7 +25,10 @@
 
     background-color: var(--main-bg);
 }
-
+html {
+    --scroll-behavior: smooth !important;
+    scroll-behavior: smooth !important;
+}
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
