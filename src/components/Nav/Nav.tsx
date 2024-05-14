@@ -44,7 +44,7 @@ const Navbar = styled.nav`
     display: flex;
     position: fixed;
     justify-content: center;
-    --anchorwidth: 130px;
+    --anchorwidth: 110px;
     background: var(--main-bg);
     opacity: 0.9;
     padding-top: 20px;
@@ -91,7 +91,7 @@ const AnchorBlock = styled.div`
 const Anchor = styled.a`
     color: inherit;
     text-decoration: none;
-    padding: 10px 30px 5px;
+    padding: 10px 10px 5px;
     color: white;
     font-weight: bold;
     position: relative;

@@ -93,9 +93,6 @@ export const Skills = () => {
 };
 
 const SkillsSection = styled.section`
-    h1 {
-        text-align: left;
-    }
     grid-area: skills;
     width: 100%;
     display: flex;
