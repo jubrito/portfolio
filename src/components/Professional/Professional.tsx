@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode } from "react";
 import styled from "styled-components";
 
 export const Professional = () => {
@@ -72,6 +72,7 @@ const ProfessionalItem = ({
         panelElement.hidden = !isHidden;
         button.ariaExpanded = isHidden.toString();
         button.classList.toggle("expanded");
+        panelElement.classList.toggle("expanded");
     };
     return (
         <Experience>
@@ -131,19 +132,10 @@ const ProfessionalSection = styled.section`
         background: var(--primary-color);
         border: 0;
         padding: 0 20px;
+        border-radius: 10px;
 
         &.expanded {
-            animation: expandHeader 2s normal forwards;
-            transition: all 1s linear;
-        }
-
-        @keyframes expandHeader {
-            from {
-                width: 40%;
-            }
-            to {
-                width: 100%;
-            }
+            border-radius: 10px 10px 0 0;
         }
     }
 
@@ -151,5 +143,9 @@ const ProfessionalSection = styled.section`
         background: #9ca4b6;
         color: black;
         padding: 20px;
+
+        &.expanded {
+            border-radius: 0px 0px 10px 10px;
+        }
     }
 `;
