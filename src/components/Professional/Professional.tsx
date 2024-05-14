@@ -8,7 +8,7 @@ export const Professional = () => {
             <ProfessionalItem
                 id={0}
                 title="Thoughtworks"
-                duration="2021 - present">
+                duration="2021 – present">
                 <p>
                     <strong>Trainee & Software Developer consultant. </strong>
                     Graduate at Thoughtworks University (TWU-73), a trainee
@@ -26,11 +26,17 @@ export const Professional = () => {
                     Development; Cultivation of a strong team clulture through
                     collaboration and candid feedback.
                 </p>
-                <span>
-                    React, Java, Spring Boot, PostgresSQL, Jest, jUnit, Taiko
-                </span>
+                <div className="technologies">
+                    <span>React</span>
+                    <span>Java</span>
+                    <span>Spring Boot</span>
+                    <span>PostgresSQL</span>
+                    <span>Jest</span>
+                    <span>jUnit</span>
+                    <span>Taiko</span>
+                </div>
             </ProfessionalItem>
-            <ProfessionalItem id={2} title="GreenPlat" duration="2020 - 2021">
+            <ProfessionalItem id={2} title="GreenPlat" duration="2020 – 2021">
                 <p>
                     <strong>Web Developer. </strong>
                     Created applications for waste management enabing blockchain
@@ -44,9 +50,13 @@ export const Professional = () => {
                     themes, code and style standardization focusing on
                     scalability and maintainability.
                 </p>
-                <span>
-                    Javascript, jQuery, Bootstrap, HTML, CSS, Git, Ajax, Docker
-                </span>
+                <span>Javascript</span>
+                <span>jQuery</span>
+                <span>Bootstrap</span>
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Ajax</span>
+                <span>Docker</span>
             </ProfessionalItem>
         </ProfessionalSection>
     );
@@ -83,7 +93,7 @@ const ProfessionalItem = ({
                 onClick={(e) => toggleAccordion(e.currentTarget)}
                 aria-label={title}>
                 <h2 aria-hidden="true">{title}</h2>
-                <h3>– {duration}</h3>
+                <h3>({duration})</h3>
             </button>
             <div
                 aria-labelledby={`header${id}`}
@@ -104,12 +114,7 @@ const ProfessionalSection = styled.section`
     grid-area: professional;
     max-width: var(--main-width);
     width: 100%;
-
-    p,
-    h2,
-    h3 {
-        text-align: left;
-    }
+    text-align: left;
 
     h2 {
         text-transform: uppercase;
@@ -124,6 +129,14 @@ const ProfessionalSection = styled.section`
         margin-top: 0;
     }
 
+    span {
+        background: var(--primary-color);
+        border-radius: 15px;
+        padding: 10px;
+        color: white;
+        margin-right: 10px;
+    }
+
     button {
         display: flex;
         align-items: center;
@@ -136,6 +149,7 @@ const ProfessionalSection = styled.section`
 
         &.expanded {
             border-radius: 10px 10px 0 0;
+            width: 100%;
         }
     }
 
@@ -143,6 +157,7 @@ const ProfessionalSection = styled.section`
         background: #9ca4b6;
         color: black;
         padding: 20px;
+        width: fit-content;
 
         &.expanded {
             border-radius: 0px 0px 10px 10px;
