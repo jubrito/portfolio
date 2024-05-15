@@ -31,6 +31,9 @@ export const Nav = () => {
                 <AnchorBlock>
                     <Anchor href="#projects-section">Projects</Anchor>
                 </AnchorBlock>
+                <AnchorBlock>
+                    <Anchor href="#professional-section">Professional</Anchor>
+                </AnchorBlock>
                 <div className="bg"></div>
             </NavBlock>
         </Navbar>
@@ -44,7 +47,7 @@ const Navbar = styled.nav`
     display: flex;
     position: fixed;
     justify-content: center;
-    --anchorwidth: 110px;
+    /* --anchorwidth: 110px; */
     background: var(--main-bg);
     opacity: 0.9;
     padding-top: 20px;
@@ -65,6 +68,7 @@ const AnchorBlock = styled.div`
     .active {
         bordom-bottom: 1px solid white;
         transition: transform 2s;
+
         &::after {
             position: absolute;
             content: "";
@@ -91,7 +95,7 @@ const AnchorBlock = styled.div`
 const Anchor = styled.a`
     color: inherit;
     text-decoration: none;
-    padding: 10px 10px 5px;
+    padding: 10px 20px 5px;
     color: white;
     font-weight: bold;
     position: relative;

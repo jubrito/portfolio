@@ -115,7 +115,7 @@ const ProfessionalItem = ({
         setTimeout(() => {
             window.scroll({
                 top:
-                    panelElement.getBoundingClientRect().bottom +
+                    panelElement.getBoundingClientRect().top / 2 +
                     window.scrollY,
                 behavior: "smooth",
             });
@@ -168,12 +168,12 @@ const ProfessionalSection = styled.section`
     h2 {
         text-transform: uppercase;
         margin: 0;
-        font-size: 22px;
+        font-size: 1.4rem;
     }
 
     h3 {
         margin: 0 0 0 7px;
-        font-size: 18px;
+        font-size: 1.2rem;
     }
 
     p {

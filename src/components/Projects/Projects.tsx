@@ -44,29 +44,26 @@ const Project = ({
     return (
         <ProjectBorder>
             <Proj>
-                <Technologies aria-label="Technologies used in this project">
-                    {technologies.map((tech: string) => (
-                        <span>{tech}</span>
-                    ))}
-                </Technologies>
-                <ProjHeader aria-label={title}>
-                    <h2 aria-hidden={true}>
-                        {link && (
-                            <a
-                                href="https://sustentabilidade-quiz-jubrito.vercel.app/"
-                                aria-hidden={true}>
-                                Sustainability Quiz
-                            </a>
-                        )}
-                        {!link && title}
-                    </h2>
+                <ProjHeader>
+                    {link && (
+                        <a href={link}>
+                            <h2 id="title">{title}</h2>
+                        </a>
+                    )}
+                    {!link && <h2 id="title">{title}</h2>}
                     <a
                         href={repository}
-                        aria-label="Visit this project's repository on github">
+                        title="Visit github repository"
+                        aria-describedby="title">
                         <GithubLogo src={githublogo} alt="" />
                     </a>
                 </ProjHeader>
                 <p>{description}</p>
+                <Technologies aria-label={`Technologies:`}>
+                    {technologies.map((tech: string, id) => (
+                        <span key={id}>{tech}</span>
+                    ))}
+                </Technologies>
             </Proj>
         </ProjectBorder>
     );
@@ -122,7 +119,7 @@ const ProjectBorder = styled.div`
     background-size: 300% 300%;
     background-position: 0 50%;
     border-radius: var(--border-radius);
-    animation: moveGradient 6s alternate infinite;
+    animation: moveGradient 4s alternate infinite;
     padding: 3px;
     width: 100%;
     margin-bottom: 30px;
@@ -139,18 +136,26 @@ const Proj = styled.div`
     position: relative;
     overflow: hidden;
     padding: 30px;
+
+    a {
+        margin: 0;
+    }
+    h2 {
+        margin: 0;
+    }
+    p {
+        margin: 15px 0 20px;
+        font-size: 1.3rem;
+    }
     h2,
     a {
-        margin: 20px 0 10px;
         background-color: 10px;
         border-radius: 2% 2% 2% 2%;
         color: white;
         font-size: 1.5rem;
         text-transform: uppercase;
     }
-    p {
-        margin: 0;
-    }
+
     @keyframes moveGradient {
         50% {
             background-position: 100% 50%;
