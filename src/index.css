@@ -18,10 +18,9 @@
     scroll-behavior: smooth;
 
     --main-width: 1000px;
-    /* --main-bg: #1e2638; */
     --main-bg: #131313;
     --primary-color: #1e2638;
-    --primary-color-light: #516695;
+    --primary-color-light: #6b9abe;
     --primary-color-lighter: #82a9ff;
 
     background-color: var(--main-bg);
@@ -33,7 +32,7 @@ html {
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: 0.1fr 0.3fr 0fr 0.8fr 0.7fr 0.7;
+    grid-template-rows: 0.1fr 0.3fr 0fr 1fr 0.7fr 0.7;
     grid-template-areas:
         "nav nav nav"
         "about about about"

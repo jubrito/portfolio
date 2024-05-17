@@ -1,6 +1,7 @@
 import styled from "styled-components";
 // import githublogo from "../../assets/github-logo.png";
 import githublogo from "../../assets/image.png";
+import triangle from "../../assets/triangle.svg";
 
 export const Projects = () => {
     return (
@@ -22,6 +23,7 @@ export const Projects = () => {
                     repository="https://github.com/jubrito/ecoleta"
                 />
             </ProjectsBlock>
+            <Triangles />
         </ProjectsSection>
     );
 };
@@ -42,32 +44,46 @@ const Project = ({
     link,
 }: ProjectProps) => {
     return (
-        <ProjectBorder>
-            <Proj>
-                <ProjHeader>
-                    {link && (
-                        <a href={link}>
-                            <h2 id="title">{title}</h2>
+        <>
+            <ProjectBorder>
+                <Proj>
+                    <ProjHeader>
+                        {link && (
+                            <a href={link}>
+                                <h2 id="title">{title}</h2>
+                            </a>
+                        )}
+                        {!link && <h2 id="title">{title}</h2>}
+                        <a
+                            href={repository}
+                            title="Visit github repository"
+                            aria-describedby="title">
+                            <GithubLogo src={githublogo} alt="" />
                         </a>
-                    )}
-                    {!link && <h2 id="title">{title}</h2>}
-                    <a
-                        href={repository}
-                        title="Visit github repository"
-                        aria-describedby="title">
-                        <GithubLogo src={githublogo} alt="" />
-                    </a>
-                </ProjHeader>
-                <p>{description}</p>
-                <Technologies aria-label={`Technologies:`}>
-                    {technologies.map((tech: string, id) => (
-                        <span key={id}>{tech}</span>
-                    ))}
-                </Technologies>
-            </Proj>
-        </ProjectBorder>
+                    </ProjHeader>
+                    <p>{description}</p>
+                    <Technologies aria-label={`Technologies:`}>
+                        {technologies.map((tech: string, id) => (
+                            <span key={id}>{tech}</span>
+                        ))}
+                    </Technologies>
+                </Proj>
+            </ProjectBorder>
+        </>
     );
 };
+
+const Triangles = styled.div`
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    z-index: 99;
+    transform: scaleY(-1);
+    background: url("${triangle}");
+    background-size: cover;
+`;
 
 const Technologies = styled.div`
     width: 100%;
@@ -96,6 +112,7 @@ const ProjectsSection = styled.section`
     width: 100%;
     grid-area: proj;
     max-width: var(--main-width);
+    position: relative;
     h1 {
         text-align: left;
     }
@@ -118,7 +135,7 @@ const ProjectBorder = styled.div`
     /* background: linear-gradient(60deg, hsl(0, 0%, 100%), hsl(0, 0%, 100%)); */
     background-size: 300% 300%;
     background-position: 0 50%;
-    border-radius: var(--border-radius);
+    /* border-radius: var(--border-radius); */
     animation: moveGradient 4s alternate infinite;
     padding: 3px;
     width: 100%;
@@ -130,7 +147,7 @@ const ProjectBorder = styled.div`
 
 const Proj = styled.div`
     background: #131313;
-    border-radius: var(--border-radius);
+    /* border-radius: var(--border-radius); */
     text-align: left;
     color: white;
     position: relative;

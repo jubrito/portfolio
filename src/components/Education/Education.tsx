@@ -2,25 +2,44 @@ import styled from "styled-components";
 export const Education = () => {
     return (
         <EducationSection>
-            <h1>Education</h1>
             <EducationBox>
-                <Experience>
-                    <h2>University of São Paulo, EACH-USP (2017-2020)</h2>
-                    <p>
-                        <span>Bachelor's degree in computing</span> with an
-                        emphasis on Infomation Systems. Approved in 2nd place.
-                        Rank in entrance group: 8th out of 132.
-                    </p>
-                    <ProjectBorder></ProjectBorder>
-                </Experience>
-                <Experience>
-                    <h2>NodeJS - The Complet Guide (Academind)</h2>
-                    <p>
-                        <span>Course</span> about the connection between Nodejs
-                        and MVC, REST APIs, GraphQL, Deno, APIs, Authentication,
-                        MongoDB, and SQL.
-                    </p>
-                </Experience>
+                <h1>Education</h1>
+                <div className="experiences">
+                    <Experience $bg={"#95be6b"}>
+                        <h2>University of São Paulo, EACH-USP (2017-2020)</h2>
+                        <p>
+                            <span>Bachelor's degree in computing</span> with an
+                            emphasis on Infomation Systems. Approved in 2nd
+                            place. Rank in entrance group: 8th out of 132.
+                        </p>
+                    </Experience>
+                    <Experience $bg={"#6b6cbe"}>
+                        <h2>NodeJS - The Complet Guide (Academind)</h2>
+                        <p>
+                            <span>Course</span> about the connection between
+                            Nodejs and MVC, REST APIs, GraphQL, Deno, APIs,
+                            Authentication, MongoDB, and SQL.
+                        </p>
+                    </Experience>
+                </div>
+                <div className="experiences">
+                    <Experience $bg={"#6ba3be"}>
+                        <h2>University of São Paulo, EACH-USP (2017-2020)</h2>
+                        <p>
+                            <span>Bachelor's degree in computing</span> with an
+                            emphasis on Infomation Systems. Approved in 2nd
+                            place. Rank in entrance group: 8th out of 132.
+                        </p>
+                    </Experience>
+                    <Experience $bg={"#be6bb9"}>
+                        <h2>NodeJS - The Complet Guide (Academind)</h2>
+                        <p>
+                            <span>Course</span> about the connection between
+                            Nodejs and MVC, REST APIs, GraphQL, Deno, APIs,
+                            Authentication, MongoDB, and SQL.
+                        </p>
+                    </Experience>
+                </div>
             </EducationBox>
         </EducationSection>
     );
@@ -28,35 +47,37 @@ export const Education = () => {
 
 const EducationSection = styled.section`
     grid-area: education;
-    max-width: var(--main-width);
     text-align: left;
+    background: white;
+    color: black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 `;
 
 const EducationBox = styled.div`
-    /* display: flex;
-    justify-content: flex-start; */
-`;
+    width: var(--main-width);
 
-const ProjectBorder = styled.div`
-    background: linear-gradient(60deg, var(--primary-color), hsl(0, 0%, 100%));
-    /* background: linear-gradient(60deg, hsl(0, 0%, 100%), hsl(0, 0%, 100%)); */
-    background-size: 300% 300%;
-    background-position: 0 50%;
-    animation: moveGradient 4s alternate infinite;
-    padding: 0 0 4px 0;
-    width: 100%;
-    margin: 20px 0;
-
-    &:nth-child(odd) {
-        margin-right: 30px;
+    .experiences {
+        display: flex;
+        justify-content: flex-start;
     }
 `;
 
-const Experience = styled.div`
+const Experience = styled.div<{ $bg: string }>`
     height: 100%;
+    background: white;
+    padding: 15px;
+    background: ${(props) => props.$bg};
+    margin-bottom: 25px;
+    &:nth-child(odd) {
+        margin-right: 25px;
+    }
     h2 {
-        margin: 0;
-        padding: 10px 0;
+        margin: 0 0 15px 0;
+        padding: 5px;
         position: relative;
         font-size: 1.5rem;
         text-transform: uppercase;
@@ -68,10 +89,10 @@ const Experience = styled.div`
     p {
         margin: 0 0 3px 0;
         font-size: 1.4rem;
-        background: var(--main-bg);
     }
     span {
-        color: var(--primary-color-lighter);
+        /* background: var(--primary-color-lighter); */
+        padding: 3px 5px;
         font-weight: bold;
     }
 `;

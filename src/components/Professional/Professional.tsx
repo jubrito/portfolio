@@ -156,6 +156,9 @@ const ProfessionalSection = styled.section`
     background: var(--primary-color-light);
     display: flex;
     justify-content: center;
+    position: relative;
+    padding-bottom: 20px;
+
     .container {
         max-width: var(--main-width);
         width: 100%;
@@ -187,7 +190,7 @@ const ProfessionalSection = styled.section`
 
     span {
         background: var(--main-bg);
-        border-radius: 15px;
+        /* border-radius: 15px; */
         padding: 7px 15px;
         color: white;
         margin-right: 10px;
@@ -201,7 +204,7 @@ const ProfessionalSection = styled.section`
         background: var(--main-bg);
         border: 0;
         padding: 15px;
-        border-radius: 20px;
+        /* border-radius: 15px; */
 
         &.expanded {
             border-radius: 10px 10px 0 0;
@@ -222,7 +225,7 @@ const ProfessionalSection = styled.section`
     }
 
     .panel {
-        background: #9ca4b6;
+        background: #fff;
         color: black;
         padding: 20px;
         width: fit-content;
