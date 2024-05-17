@@ -1,11 +1,34 @@
+import { useEffect, useRef } from "react";
 import styled from "styled-components";
 export const Education = () => {
+    const EdRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            if (entry.isIntersecting) {
+                document.getElementById("xp1")?.classList.add("xp1");
+                document.getElementById("xp2")?.classList.add("xp2");
+                document.getElementById("xp3")?.classList.add("xp3");
+                document.getElementById("xp4")?.classList.add("xp4");
+            } else {
+                document.getElementById("xp1")?.classList.remove("xp1");
+                document.getElementById("xp2")?.classList.remove("xp2");
+                document.getElementById("xp3")?.classList.remove("xp3");
+                document.getElementById("xp4")?.classList.remove("xp4");
+            }
+        });
+        if (EdRef.current !== null) {
+            observer.observe(EdRef.current);
+        }
+    }, []);
+
     return (
-        <EducationSection>
+        <EducationSection ref={EdRef} id="education-section">
             <EducationBox>
                 <h1>Education</h1>
                 <div className="experiences">
-                    <Experience $bg={"#95be6b"}>
+                    <Experience $bg={"#95be6b"} id="xp1">
                         <h2>University of São Paulo, EACH-USP (2017-2020)</h2>
                         <p>
                             <span>Bachelor's degree in computing</span> with an
@@ -13,7 +36,7 @@ export const Education = () => {
                             place. Rank in entrance group: 8th out of 132.
                         </p>
                     </Experience>
-                    <Experience $bg={"#6b6cbe"}>
+                    <Experience $bg={"#6b6cbe"} id="xp2">
                         <h2>NodeJS - The Complet Guide (Academind)</h2>
                         <p>
                             <span>Course</span> about the connection between
@@ -23,7 +46,7 @@ export const Education = () => {
                     </Experience>
                 </div>
                 <div className="experiences">
-                    <Experience $bg={"#6ba3be"}>
+                    <Experience $bg={"#6ba3be"} id="xp3">
                         <h2>University of São Paulo, EACH-USP (2017-2020)</h2>
                         <p>
                             <span>Bachelor's degree in computing</span> with an
@@ -31,7 +54,7 @@ export const Education = () => {
                             place. Rank in entrance group: 8th out of 132.
                         </p>
                     </Experience>
-                    <Experience $bg={"#be6bb9"}>
+                    <Experience $bg={"#be6bb9"} id="xp4">
                         <h2>NodeJS - The Complet Guide (Academind)</h2>
                         <p>
                             <span>Course</span> about the connection between
@@ -71,7 +94,6 @@ const Experience = styled.div<{ $bg: string }>`
     background: white;
     padding: 15px;
     background: ${(props) => props.$bg};
-    margin-bottom: 25px;
     &:nth-child(odd) {
         margin-right: 25px;
     }
@@ -94,5 +116,32 @@ const Experience = styled.div<{ $bg: string }>`
         /* background: var(--primary-color-lighter); */
         padding: 3px 5px;
         font-weight: bold;
+    }
+
+    width: 100%;
+    &.xp1 {
+        animation: xp1 2s linear forwards;
+    }
+    &.xp2 {
+        animation: xp2 2s linear forwards;
+    }
+    &.xp3 {
+        animation: xp1 2s linear forwards;
+    }
+    &.xp4 {
+        animation: xp2 2s linear forwards;
+    }
+
+    @keyframes xp1 {
+        from {
+            margin-right: 5px;
+            opacity: 0.6;
+            margin-bottom: 5px;
+        }
+        to {
+            margin-right: 25px;
+            opacity: 1;
+            margin-bottom: 25px;
+        }
     }
 `;
