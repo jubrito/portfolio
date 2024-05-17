@@ -34,6 +34,9 @@ export const Nav = () => {
                 <AnchorBlock>
                     <Anchor href="#professional-section">Professional</Anchor>
                 </AnchorBlock>
+                <AnchorBlock>
+                    <Anchor href="#education-section">Education</Anchor>
+                </AnchorBlock>
                 <div className="bg"></div>
             </NavBlock>
         </Navbar>

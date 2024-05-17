@@ -1,7 +1,6 @@
 import styled from "styled-components";
 // import githublogo from "../../assets/github-logo.png";
 import githublogo from "../../assets/image.png";
-import triangle from "../../assets/triangle.svg";
 
 export const Projects = () => {
     return (
@@ -72,18 +71,6 @@ const Project = ({
         </>
     );
 };
-
-const Triangles = styled.div`
-    position: absolute;
-    bottom: -20px;
-    left: 0;
-    width: 100%;
-    height: 20px;
-    z-index: 99;
-    transform: scaleY(-1);
-    background: url("${triangle}");
-    background-size: cover;
-`;
 
 const Technologies = styled.div`
     width: 100%;
